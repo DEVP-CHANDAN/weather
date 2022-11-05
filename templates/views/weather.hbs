@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    {{>headerlink}}
+</head>
+
+<body>
+    {{>navbar}}
+    <!-- main content -->
+
+    <div class=" my-4 container-fluid main-header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main-content">
+                    <form action="" class="temp-form">
+                        <input type="text" id = "cityname" placeholder="Enter your city name" autocomplete="off">
+                        <input type="submit" value="search" id="submitbtn">
+                    </form>
+                </div>
+
+                <div class="tempInformation">
+                    <div class="top-layer">
+                        <p id="day">Tuesday</p>
+                        <p id="today-date">13 oct</p>
+                    </div>
+                    <div class="main-layer ">
+                        <p id="city-name">Output here</p>
+                        <div class="middle-layer date-hide">
+                                <p id="temp"><span id="temp-real-val">0</span><sup>o</sup>C</p>
+                                <p id="temp-status"><i class="fas fa-cloud"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer code -->
+
+    {{>footer}}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+</body>
+<script src="js/main.js"></script>
+
+<script>
+    const date = new Date();
+    let day = date.getDay();
+    let month = date.getMonth() + 1;
+    const day_num = document.getElementById('day')
+    const date_num = document.getElementById('today-date')
+    let months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+    ]
+
+    let days = [
+         "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",  "Sunday"
+    ]
+    
+    day_num.innerText = days[day-1]
+    date_num.innerHTML = day-1 + " " + months[month-1]
+
+</script>
+</html>
